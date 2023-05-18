@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #303030;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.MainGameController">
+   <children>
+      <Rectangle fx:id="bar" arcHeight="10.0" arcWidth="10.0" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="100.0">
+         <fill>
+            <LinearGradient endX="0.28787879329739197" endY="1.0" startX="0.29924246036645136">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.007843137718737125" green="0.7529411911964417" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2637954239569308">
+                     <color>
+                        <Color red="0.007843137718737125" green="0.7529411911964417" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Reflection bottomOpacity="0.4" fraction="0.4" topOpacity="0.7" />
+         </effect>
+      </Rectangle>
+      <Circle fx:id="ball" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.4886363564115582" focusAngle="-40.03" focusDistance="0.513761502887131" radius="0.665137588430982">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.1857335127860026">
+                     <color>
+                        <Color red="0.007843137718737125" green="0.7529411911964417" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Circle>
+      <Label fx:id="gameOve_youWin_label" alignment="CENTER" contentDisplay="CENTER" text="Game Over" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Agency FB Bold" size="64.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.8068180951205167" endY="0.022727287176883583" startX="0.7878787364020493" startY="0.9545454753167703">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.313153661819256">
+                     <color>
+                        <Color red="0.009999999776482582" green="0.7689999938011169" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <Reflection topOffset="-10.0" />
+         </effect>
+      </Label>
+      <Button fx:id="playAgainBtn" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="269.0" layoutY="300.0" mnemonicParsing="false" onAction="#playAgain" style="-fx-background-color: #f0f0f010; -fx-background-radius: 15;" text="PLAY AGAIN" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.7386363780859745" endY="0.011363607464414656" startX="0.7310606638590494" startY="0.7803030546867485">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006729475100942127">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5383580080753699">
+                     <color>
+                        <Color red="0.007843137718737125" green="0.7529411911964417" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Button>
+      <Label fx:id="username" alignment="CENTER_RIGHT" layoutX="392.0" prefHeight="53.0" prefWidth="400.0" text="Username" textAlignment="CENTER" textFill="#02c0ff">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="score" layoutX="6.0" prefHeight="53.0" prefWidth="400.0" text="Score:" textAlignment="CENTER" textFill="#02c0ff">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Separator fx:id="separator" layoutY="50.0" prefWidth="800.0" style="-fx-background-color: #02c0ff;" />
+   </children>
+</Pane>
